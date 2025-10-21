@@ -1,3 +1,5 @@
+import { state } from './state.js';
+
 // -------------------- Helpers --------------------
 export function formatPace(pace) {
   let minutes = Math.floor(pace);
@@ -42,24 +44,21 @@ export function setFatigueBar(value) {
   document.getElementById("fatigueVal").innerText = value.toFixed(0);
 }
 
-import { day, week, month } from './state.js';
-
 export function advanceDay() {
-  day++;
-  if (day > 7) { day = 1; week++; }
-  if (week > 4) { week = 1; month++; }
+  state.day++;
+  if (state.day > 7) { state.day = 1; state.week++; }
+  if (state.week > 4) { state.week = 1; state.month++; }
   updateCareer();
 }
 
 export function updateCareer() {
   document.getElementById("career").innerText =
-    `Day ${day}, Week ${week}, Month ${month}`;
+    `Day ${state.day}, Week ${state.week}, Month ${state.month}`;
 }
 
-import { pbs } from './state.js';
 export function updatePBs(formatTimeFn = formatTime) {
-  document.getElementById("pb5k").innerText   = pbs["5k"]   ? formatTimeFn(pbs["5k"])   : "--";
-  document.getElementById("pb10k").innerText  = pbs["10k"]  ? formatTimeFn(pbs["10k"])  : "--";
-  document.getElementById("pbHalf").innerText = pbs["half"] ? formatTimeFn(pbs["half"]) : "--";
-  document.getElementById("pbFull").innerText = pbs["full"] ? formatTimeFn(pbs["full"]) : "--";
+  document.getElementById("pb5k").innerText   = state.pbs["5k"]   ? formatTimeFn(state.pbs["5k"])   : "--";
+  document.getElementById("pb10k").innerText  = state.pbs["10k"]  ? formatTimeFn(state.pbs["10k"])  : "--";
+  document.getElementById("pbHalf").innerText = state.pbs["half"] ? formatTimeFn(state.pbs["half"]) : "--";
+  document.getElementById("pbFull").innerText = state.pbs["full"] ? formatTimeFn(state.pbs["full"]) : "--";
 }
