@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Break 3</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Break 3</h1>
+
+  <!-- Career Tracker -->
+  <div id="career"></div>
+
+  <!-- PB Table -->
+  <div id="pbTable">
+    <h3>Personal Bests</h3>
+    <table>
+      <tr><td>5K</td><td id="pb5k">--</td></tr>
+      <tr><td>10K</td><td id="pb10k">--</td></tr>
+      <tr><td>Half</td><td id="pbHalf">--</td></tr>
+      <tr><td>Full</td><td id="pbFull">--</td></tr>
+    </table>
+  </div>
+
+  <div id="stats"></div>
+
+  <!-- Controls -->
+  <div id="controls">
+    <button id="trainBtn">Train</button>
+    <button id="raceBtn">Race</button>
+    <button id="resetBtn">Reset</button>
+  </div>
+
+  <!-- Training Options -->
+  <div id="trainingOptions" style="display:none;">
+    <h3>Choose Training:</h3>
+    <button id="easyBtn">Easy Run</button>
+    <button id="speedBtn">Intervals</button>
+    <button id="longBtn">Long Run</button>
+    <button id="restBtn">Rest Day</button>
+  </div>
+
+  <!-- Race Options -->
+  <div id="raceOptions" style="display:none;">
+    <h3>Choose Race:</h3>
+    <button id="race5k">5K</button>
+    <button id="race10k">10K</button>
+    <button id="raceHalf">Half Marathon</button>
+    <button id="raceFull">Marathon</button>
+  </div>
+
+  <div id="message"></div>
+
+  <!-- Metrics Panel -->
+  <h2>Calculations</h2>
+  <div class="metric">
+    <span>Fitness (CTL)</span>
+    <div class="metric-bar"><div id="fitnessBar" class="metric-fill"></div></div>
+    <span id="fitnessVal"></span>
+  </div>
+  <div class="metric">
+    <span>Fatigue (ATL)</span>
+    <div class="metric-bar"><div id="fatigueBar" class="metric-fill"></div></div>
+    <span id="fatigueVal"></span>
+  </div>
+  <div class="metric">
+    <span>Stress Balance (TSB)</span>
+    <div class="metric-bar"><div id="tsbBar" class="metric-fill"></div></div>
+    <span id="tsbVal"></span>
+  </div>
+  <div class="metric">
+    <span>VO₂max (est)</span>
+    <div class="metric-bar"><div id="vo2Bar" class="metric-fill"></div></div>
+    <span id="vo2Val"></span>
+  </div>
+  <div class="metric">
+    <span>Marathon Shape</span>
+    <div class="metric-bar"><div id="shapeBar" class="metric-fill"></div></div>
+    <span id="shapeVal"></span>
+  </div>
+
+  <div id="predicted"></div>
+  <div id="endgame"></div>
+
+  <!-- Main entry point -->
+  <script type="module" src="index.js"></script>
+</body>
+</html>
